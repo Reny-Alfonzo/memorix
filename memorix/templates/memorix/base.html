@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MEMORIX{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'memorix/styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'mis_mazos' %}">Mis Mazos</a>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        <p>Desarrollado por <strong>RenyDev21</strong> | <a href="http://www.youtube.com/@renyalfonzo3908" target="_blank">Mi canal de YouTube</a></p>
+    </footer>
+</body>
+</html>
