@@ -1,0 +1,17 @@
+{% extends "memorix/base.html" %}
+
+{% block title %}Mis Mazos - MEMORIX{% endblock %}
+
+{% block content %}
+    <h1>Mis Mazos</h1>
+
+    <ul class="lista-mazos">
+        {% for mazo in mazos %}
+            <li>
+                <a href="{% url 'mis_tarjetas' mazo.id %}">{{ mazo.nombre }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'crear_mazo' %}" class="btn-crear">Crear Nuevo Mazo</a>
+{% endblock %}

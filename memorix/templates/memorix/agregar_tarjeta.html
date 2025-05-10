@@ -1,0 +1,14 @@
+{% extends "memorix/base.html" %}
+
+{% block title %}Agregar Tarjeta - MEMORIX{% endblock %}
+
+{% block content %}
+    <h1>Agregar Tarjeta al Mazo "{{ mazo.nombre }}"</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-enviar">Guardar Tarjeta</button>
+        <a href="{% url 'mis_tarjetas' mazo.id %}" class="btn-cancelar">Cancelar</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "memorix/base.html" %}
+
+{% block title %}Crear Mazo - MEMORIX{% endblock %}
+
+{% block content %}
+    <h1>Crear Nuevo Mazo</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-enviar">Guardar Mazo</button>
+        <a href="{% url 'home' %}" class="btn-cancelar">Cancelar</a>
+    </form>
+{% endblock %}

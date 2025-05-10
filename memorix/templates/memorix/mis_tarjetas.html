@@ -1,0 +1,22 @@
+{% extends "memorix/base.html" %}
+
+{% block title %}Tarjetas en {{ mazo.nombre }} - MEMORIX{% endblock %}
+
+{% block content %}
+    <h1>Tarjetas en "{{ mazo.nombre }}"</h1>
+
+    <ul class="lista-tarjetas">
+        {% for tarjeta in tarjetas %}
+            <li>
+                <strong>{{ tarjeta.nombre }}</strong>
+                <p>Anverso: {{ tarjeta.anverso }}</p>
+                <p>Reverso: {{ tarjeta.reverso }}</p>
+            </li>
+        {% empty %}
+            <p>Aún no hay tarjetas en este mazo.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'agregar_tarjeta' mazo.id %}" class="btn-crear">Agregar Nueva Tarjeta</a>
+    <a href="{% url 'mis_mazos' %}" class="btn-cancelar">Volver a Mis Mazos</a>
+{% endblock %}

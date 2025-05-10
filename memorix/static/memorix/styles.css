@@ -40,3 +40,100 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+
+.crear-mazo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-crear {
+    display: inline-block;
+    background-color: #0073e6;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-crear:hover {
+    background-color: #005bb5;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-enviar, .btn-cancelar {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+}
+
+.lista-mazos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-mazos li {
+    background-color: #0073e6;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.lista-mazos a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.lista-mazos a:hover {
+    background-color: #005bb5;
+    padding: 10px;
+}
+
+.lista-tarjetas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-tarjetas li {
+    background-color: #0073e6;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+.lista-tarjetas strong {
+    font-size: 18px;
+}
+
+.lista-tarjetas p {
+    margin: 5px 0;
+    font-size: 16px;
+}
