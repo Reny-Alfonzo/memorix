@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "memorix",
+    "estudio",
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

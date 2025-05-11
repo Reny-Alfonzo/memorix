@@ -8,7 +8,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn-enviar">Guardar Mazo</button>
-        <a href="{% url 'home' %}" class="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn-general">Guardar Mazo</button>
+        <a href="{% url 'home' %}" class="btn-general">Cancelar</a>
     </form>
 {% endblock %}

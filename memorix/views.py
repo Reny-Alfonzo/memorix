@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import Mazo, Tarjeta
+from .models import Mazo
 from .forms import MazoForm, TarjetaForm
 
 def home(request):
     return render(request, "memorix/home.html")
 
 def mis_mazos(request):
-    mazos = Mazo.objects.all()
+    mazos = Mazo.objects.prefetch_related("tarjetas").all()  # Mejora el rendimiento
     return render(request, "memorix/mis_mazos.html", {"mazos": mazos})
 
 def mis_tarjetas(request, mazo_id):
-    mazo = Mazo.objects.get(id=mazo_id)
+    mazo = Mazo.objects.select_related().get(id=mazo_id)
     tarjetas = mazo.tarjetas.all()
     return render(request, "memorix/mis_tarjetas.html", {"mazo": mazo, "tarjetas": tarjetas})
 

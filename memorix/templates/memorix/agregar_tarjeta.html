@@ -8,7 +8,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn-enviar">Guardar Tarjeta</button>
-        <a href="{% url 'mis_tarjetas' mazo.id %}" class="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn-general">Guardar Tarjeta</button>
+        <a href="{% url 'mis_tarjetas' mazo.id %}" class="btn-general">Cancelar</a>
     </form>
 {% endblock %}

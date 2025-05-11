@@ -1,0 +1,30 @@
+{% extends "estudio/base.html" %}
+
+{% block title %}Estudiar Mazo - MEMORIX{% endblock %}
+
+{% block content %}
+    <div class="tarjeta-container">
+        {% for tarjeta in tarjetas %}
+            <div class="tarjeta" id="tarjeta-{{ forloop.counter }}">
+                <div class="tarjeta-inner">
+                    <div class="tarjeta-frente">{{ tarjeta.anverso }}</div>
+                    <div class="tarjeta-reverso">{{ tarjeta.reverso }}</div>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="aprendida-{{ forloop.counter }}">
+                    <label for="aprendida-{{ forloop.counter }}">✅</label>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay tarjetas en este mazo aún.</p>
+        {% endfor %}
+    </div>
+
+    <div class="top-buttons">
+        <button class="btn-modo" onclick="toggleModo()">🌙</button>
+        <button class="btn-salir" onclick="location.href='{% url 'home' %}'">Salir</button>
+    </div>
+
+    <button class="flecha flecha-izquierda">❮</button>
+    <button class="flecha flecha-derecha">❯</button>
+{% endblock %}

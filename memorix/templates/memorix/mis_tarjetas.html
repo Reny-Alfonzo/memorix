@@ -16,7 +16,7 @@
             <p>Aún no hay tarjetas en este mazo.</p>
         {% endfor %}
     </ul>
-
-    <a href="{% url 'agregar_tarjeta' mazo.id %}" class="btn-crear">Agregar Nueva Tarjeta</a>
-    <a href="{% url 'mis_mazos' %}" class="btn-cancelar">Volver a Mis Mazos</a>
+    <a href="{% url 'estudiar_mazo' mazo.id %}" class="btn-estudiar">Estudiar Este Mazo</a>
+    <a href="{% url 'agregar_tarjeta' mazo.id %}" class="btn-general">Agregar Nueva Tarjeta</a>
+    <a href="{% url 'mis_mazos' %}" class="btn-general">Volver a Mis Mazos</a>
 {% endblock %}
