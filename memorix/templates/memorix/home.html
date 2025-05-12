@@ -3,5 +3,12 @@
 {% block title %}Home - MEMORIX{% endblock %}
 
 {% block content %}
-    <a href="{% url 'crear_mazo' %}" class="btn-general">Crear Nuevo Mazo</a>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <a href="{% url 'crear_mazo' %}" class="button is-light is-large is-fullwidth">Crear Nuevo Mazo</a>
+            </div>
+
+        </div>
+    </section>
 {% endblock %}

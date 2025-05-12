@@ -3,20 +3,26 @@
 {% block title %}Tarjetas en {{ mazo.nombre }} - MEMORIX{% endblock %}
 
 {% block content %}
-    <h1>Tarjetas en "{{ mazo.nombre }}"</h1>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                {% for tarjeta in tarjetas %}
+                    <div class="column is-one-third">
+                        <div class="box has-text-centered">
+                            <h2 class="subtitle">{{ tarjeta.nombre }}</h2>
+                            <p><strong>Anverso:</strong> {{ tarjeta.anverso }}</p>
+                            <p><strong>Reverso:</strong> {{ tarjeta.reverso }}</p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="has-text-centered">Aún no hay tarjetas en este mazo.</p>
+                {% endfor %}
+            </div>
 
-    <ul class="lista-tarjetas">
-        {% for tarjeta in tarjetas %}
-            <li>
-                <strong>{{ tarjeta.nombre }}</strong>
-                <p>Anverso: {{ tarjeta.anverso }}</p>
-                <p>Reverso: {{ tarjeta.reverso }}</p>
-            </li>
-        {% empty %}
-            <p>Aún no hay tarjetas en este mazo.</p>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'estudiar_mazo' mazo.id %}" class="btn-estudiar">Estudiar Este Mazo</a>
-    <a href="{% url 'agregar_tarjeta' mazo.id %}" class="btn-general">Agregar Nueva Tarjeta</a>
-    <a href="{% url 'mis_mazos' %}" class="btn-general">Volver a Mis Mazos</a>
+            <div class="has-text-centered">
+                <a href="{% url 'agregar_tarjeta' mazo.id %}" class="button is-success is-large">Agregar Nueva Tarjeta</a>
+                <a href="{% url 'mis_mazos' %}" class="button is-danger is-light is-large">Volver a Mis Mazos</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -5,22 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}MEMORIX{% endblock %}</title>
     {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";>
     <link rel="stylesheet" href="{% static 'memorix/styles.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'memorix/card.png' %}"
 </head>
 <body>
-    <div class="navbar">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'mis_mazos' %}">Mis Mazos</a>
-        <a href="{% url 'crear_mazo' %}">Crear Mazo</a>
-    </div>
-    
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="container">
-        {% block content %}{% endblock %}
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}"><strong>MEMORIX</strong></a>
+
+            <!-- Botón de Menú para Dispositivos Móviles -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <!-- Menú de Navegación -->
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="{% url 'mis_mazos' %}">Mis Mazos</a>
+                <a class="navbar-item" href="{% url 'crear_mazo' %}">Crear Mazo</a>
+            </div>
+        </div>
     </div>
+</nav>
+
+    <!-- Contenido Principal -->
+    <main class="section">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
     <footer class="footer">
-        <p>Desarrollado por <strong>RenyDev21</strong> | <a href="http://www.youtube.com/@renyalfonzo3908" target="_blank">Mi canal de YouTube</a></p>
+        <div class="content has-text-centered">
+            <p>&copy; 2025 MEMORIX - Optimiza tu aprendizaje</p>
+        </div>
     </footer>
-    <script src="{% static 'memorix/script.js' %}"></script>
+<script src="{% static 'memorix/script.js' %}" defer></script>
 
 </body>
 </html>

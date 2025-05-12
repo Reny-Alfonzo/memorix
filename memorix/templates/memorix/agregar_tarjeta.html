@@ -3,12 +3,30 @@
 {% block title %}Agregar Tarjeta - MEMORIX{% endblock %}
 
 {% block content %}
-    <h1>Agregar Tarjeta al Mazo "{{ mazo.nombre }}"</h1>
+    <section class="section">
+        <div class="container">
+            <div class="box">
+                <form method="POST">
+                    {% csrf_token %}
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn-general">Guardar Tarjeta</button>
-        <a href="{% url 'mis_tarjetas' mazo.id %}" class="btn-general">Cancelar</a>
-    </form>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" name="anverso" placeholder="Ingrese el anverso de la tarjeta" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" name="reverso" placeholder="Ingrese el reverso de la tarjeta" required>
+                        </div>
+                    </div>
+
+                    <div class="buttons is-centered">
+                        <button type="submit" class="button is-success is-large">Guardar Tarjeta</button>
+                        <a href="{% url 'mis_tarjetas' mazo.id %}" class="button is-danger is-light is-large">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -3,15 +3,27 @@
 {% block title %}Mis Mazos - MEMORIX{% endblock %}
 
 {% block content %}
-    <h1>Mis Mazos</h1>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                {% for mazo in mazos %}
+                    <div class="column is-one-third">
+                        <div class="box">
+                            <h2 class="subtitle">{{ mazo.nombre }}</h2>
+                            <div class="buttons is-centered">
+                                <a href="{% url 'mis_tarjetas' mazo.id %}" class="button is-info">Ver Tarjetas</a>
+                                <a href="{% url 'estudiar_mazo' mazo.id %}" class="button is-success">Estudiar</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="has-text-centered">No tienes mazos aún. ¡Crea uno ahora!</p>
+                {% endfor %}
+            </div>
 
-    <ul class="lista-mazos">
-        {% for mazo in mazos %}
-            <li>
-                <a href="{% url 'mis_tarjetas' mazo.id %}">{{ mazo.nombre }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-
-    <a href="{% url 'crear_mazo' %}" class="btn-general">Crear Nuevo Mazo</a>
+            <div class="has-text-centered">
+                <a href="{% url 'crear_mazo' %}" class="button is-primary is-large">Crear Nuevo Mazo</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

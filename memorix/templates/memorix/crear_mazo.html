@@ -3,12 +3,23 @@
 {% block title %}Crear Mazo - MEMORIX{% endblock %}
 
 {% block content %}
-    <h1>Crear Nuevo Mazo</h1>
+    <section class="section">
+        <div class="container">
+            <div class="box">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="field">
+                        <div class="control">
+                            {{ form.nombre }}
+                        </div>
+                    </div>
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn-general">Guardar Mazo</button>
-        <a href="{% url 'home' %}" class="btn-general">Cancelar</a>
-    </form>
+                    <div class="buttons is-centered">
+                        <button type="submit" class="button is-primary is-large">Guardar Mazo</button>
+                        <a href="{% url 'home' %}" class="button is-danger is-light is-large">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}
