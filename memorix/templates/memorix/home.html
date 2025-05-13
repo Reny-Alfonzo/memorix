@@ -3,12 +3,6 @@
 {% block title %}Home - MEMORIX{% endblock %}
 
 {% block content %}
-    <section class="hero is-primary is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <a href="{% url 'crear_mazo' %}" class="button is-light is-large is-fullwidth">Crear Nuevo Mazo</a>
-            </div>
-
-        </div>
-    </section>
+<p class="has-text-centered">No tienes mazos aún. ¡Crea uno ahora!<a href="{% url 'crear_mazo' %}">🆕</a></p>
+<p class="has-text-centered">Ya tienes mazos creados. ¡Revisalos aquí!<a href="{% url 'mis_mazos' %}">👀</a></p>
 {% endblock %}
