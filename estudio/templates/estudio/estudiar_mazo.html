@@ -10,10 +10,6 @@
                     <div class="tarjeta-frente">{{ tarjeta.anverso }}</div>
                     <div class="tarjeta-reverso">{{ tarjeta.reverso }}</div>
                 </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="aprendida-{{ forloop.counter }}">
-                    <label for="aprendida-{{ forloop.counter }}">✅</label>
-                </div>
             </div>
         {% empty %}
             <p>No hay tarjetas en este mazo aún.</p>

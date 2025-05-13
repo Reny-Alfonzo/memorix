@@ -95,20 +95,6 @@ body {
     right: 10px;
 }
 
-/* Checkbox */
-.checkbox-container {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-container label {
-    margin-left: 10px;
-}
-
 .top-buttons {
     position: absolute;
     top: 15px;
